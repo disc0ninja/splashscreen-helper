@@ -28,6 +28,9 @@ else
   }
 
   images.each do |image|
+    puts "Moving image into corresponding folder"
     FileUtils.mv(current_dir + "/" + image, current_dir + "/" + image.gsub(/(\.).*/, "").strip.upcase)
   end
 end
+
+puts "DONE.. Navigate to the retropie menu and configure your splash screens"
