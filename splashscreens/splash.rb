@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'fileutils'
+
 puts "Welcome to disc0ninja's Splashscreen helper"
 puts
 puts "Are you running this tool from your splashscreens folder? (y/n)"
@@ -24,4 +26,8 @@ else
     |dirname| puts "Creating new dir: " + current_dir + "/" + dirname
   Dir.mkdir(dirname)
   }
+
+  images.each do |image|
+    FileUtils.mv(current_dir + "/" + image, current_dir + "/" + image.gsub(/(\.).*/, "").strip.upcase)
+  end
 end
